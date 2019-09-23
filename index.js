@@ -1,4 +1,5 @@
-const { app, BrowserWindow, Notification } = require('electron')
+const { app, BrowserWindow, Notification, Menu, shell, ipcMain } = require('electron')
+var schedule = require('node-schedule');
 
 // 保持对window对象的全局引用，如果不这么做的话，当JavaScript对象被
 // 垃圾回收的时候，window对象将会自动的关闭
@@ -18,7 +19,10 @@ function createWindow () {
   win.loadURL('https://pc.365rili.com');
 
 
-  let option = {
+  var date = new Date(2019, 8, 24, 1, 9, 0);
+  //console.log(date);
+  var job = schedule.scheduleJob(date,function() {
+    let option = {
         title: "你订阅的《海贼王》更新了",
         body: "《海贼王》已更新至第852集 激斗开幕 路飞VS卡塔库栗",
         icon: "../static/hhw.ico",
@@ -35,6 +39,7 @@ function createWindow () {
     });
 
     notify.show();
+  });
 
   // 打开开发者工具
   win.webContents.openDevTools()
