@@ -1,0 +1,29 @@
+{
+  "name": "chronos",
+  "version": "1.0.0",
+  "description": "another schedule management app",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wbitos/chronos.git"
+  },
+  "keywords": [
+    "calendar",
+    "schedule",
+    "reminder",
+    "todo"
+  ],
+  "author": "wbitos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wbitos/chronos/issues"
+  },
+  "homepage": "https://github.com/wbitos/chronos#readme",
+  "devDependencies": {
+    "electron": "^6.0.10"
+  }
+}
